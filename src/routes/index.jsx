@@ -5,6 +5,7 @@ import NotFound from "../pages/not-found/NotFound";
 import Wishes from "../pages/wishes/Wishes";
 import Cart from "../pages/cart/Cart";
 import CheckOut from "../pages/checkout/CheckOut";
+import Detail from "../pages/detail/Detail";
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path="/wishlist" element={<Wishes />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/product/:id" element={<Detail />} />
       </Route>
     </Routes>
   );

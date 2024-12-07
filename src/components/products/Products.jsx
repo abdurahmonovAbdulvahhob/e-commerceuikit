@@ -2,9 +2,11 @@ import React from "react";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { useStateValue } from "../../context";
 import { IoCartOutline, IoCartSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const Products = ({ data }) => {
   const { setWishlist, wishlist, setCount, setCart, cart} = useStateValue();
+  const navigate = useNavigate();
   
 
   const handleLike = (product) => {
@@ -34,6 +36,7 @@ const Products = ({ data }) => {
     >
       <div className="w-full h-[180px] relative bg-slate-100">
         <img
+          onClick={() => navigate(`/product/${product.id}`)}
           className="w-full h-full object-contain"
           src={product.thumbnail}
           alt=""
